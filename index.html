@@ -386,12 +386,20 @@
 
             <div class="max-w-sm mx-auto space-y-3 pt-1">
               <label class="block text-[11px] opacity-75 cursor-pointer hover:opacity-100">
-                <span>📎 Optional: Attach payment screenshot (or click Confirm directly below)</span>
+                <div class="max-w-sm mx-auto space-y-3 pt-1 text-left">
+              <!-- New Mandatory UTR Box -->
+              <div>
+                <label class="block text-[11px] font-bold text-rose-600 dark:text-rose-400 mb-1">Enter 12-Digit UTR / Reference No. (Mandatory) *</label>
+                <input id="upiUtrInput" type="text" maxlength="12" oninput="this.value = this.value.replace(/\D/g, '').slice(0, 12)" placeholder="e.g. 312345678901" class="w-full bg-white dark:bg-black/60 border border-rose-500/50 rounded-xl px-3 py-2 font-mono text-sm focus:outline-none focus:border-cyan-500" />
+              </div>
+              
+              <label class="block text-[11px] opacity-75 cursor-pointer hover:opacity-100 mt-2">
+                <span>📎 Optional: Attach payment screenshot</span>
                 <input id="upiProofFile" type="file" accept="image/*" class="mt-1.5 w-full text-[11px] file:mr-2 file:py-1 file:px-2.5 file:rounded-lg file:border-0 file:bg-black/10 dark:file:bg-white/15 file:font-semibold" />
               </label>
 
-              <button onclick="completeCheckoutPayment('UPI QR Scan')" class="w-full bg-black text-white dark:bg-white dark:text-black font-bold py-3.5 rounded-xl text-xs sm:text-sm shadow-lg transition">
-                ✅ I Have Scanned & Paid — Confirm Order &rarr;
+              <button onclick="completeCheckoutPayment('UPI QR Scan')" class="w-full bg-black text-white dark:bg-white dark:text-black font-bold py-3.5 mt-2 rounded-xl text-xs sm:text-sm shadow-lg transition">
+                ✅ Submit Payment for Verification &rarr;
               </button>
             </div>
           </div>
